@@ -1,0 +1,11 @@
+CREATE TABLE categorias (
+  id SERIAL PRIMARY KEY,
+  nome varchar(255) DEFAULT NULL
+) CHARSET=utf8;
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  description varchar(255) DEFAULT NULL,
+  category_id int NOT NULL,
+  FOREIGN KEY(category_id) REFERENCES categories(id)
+);
